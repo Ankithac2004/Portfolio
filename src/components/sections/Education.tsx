@@ -6,10 +6,11 @@ export default function Education() {
     'PCB Design',
     'VLSI Design',
     'Machine Learning',
-    'Android Development',
+    'Microprocessors',
+    'Python and Scientific Python',
+    'Android Application Development',
     'Digital Logic Design',  
     'Artificial Intelligence',
-    'Microprocessors',
     'Computer Architecture',
   ];
 
