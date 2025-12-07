@@ -42,25 +42,25 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="mb-12">
-      <h2 className="text-3xl font-bold mb-6">Projects</h2>
+      <h2 className="text-2xl md:text-3xl font-bold mb-6">Projects</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {projects.map((project, index) => (
           <Card key={index}>
-            <div className={`w-full h-40 rounded-md bg-gradient-to-br ${project.color} mb-4 flex items-center justify-center`}>
-              <span className="text-3xl font-bold opacity-50">{project.title.charAt(0)}</span>
+            <div className={`w-full h-24 md:h-40 rounded-md bg-gradient-to-br ${project.color} mb-3 md:mb-4 flex items-center justify-center`}>
+              <span className="text-2xl md:text-3xl font-bold opacity-50">{project.title.charAt(0)}</span>
             </div>
 
             <div className="mb-2">
               <span className="text-xs text-green-500 font-semibold">{project.tag}</span>
             </div>
 
-            <h3 className="text-xl font-bold mb-3">{project.title}</h3>
+            <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">{project.title}</h3>
 
-            <ul className="space-y-2 mb-4">
+            <ul className="space-y-1 md:space-y-2 mb-4">
               {project.bullets.map((bullet, i) => (
-                <li key={i} className="text-sm text-gray-400 flex items-start gap-2">
-                  <span className="text-green-500 mt-1">•</span>
+                <li key={i} className="text-xs md:text-sm text-gray-400 flex items-start gap-2">
+                  <span className="text-green-500 mt-0.5 md:mt-1 flex-shrink-0">•</span>
                   <span>{bullet}</span>
                 </li>
               ))}
