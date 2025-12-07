@@ -44,19 +44,19 @@ export default function About({ onNavigate }: AboutProps) {
         <p className="text-gray-400">A quick overview of who I am – like your top playlists</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 mb-8">
         {highlights.map((item, index) => (
           <Card key={index} onClick={() => onNavigate(item.sectionId)}>
-            <div className={`w-full h-32 rounded-md bg-gradient-to-br ${item.color} mb-4`}></div>
-            <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-            <p className="text-sm text-gray-400 line-clamp-3">{item.description}</p>
+            <div className={`w-full h-20 md:h-32 rounded-md bg-gradient-to-br ${item.color} mb-3 md:mb-4`}></div>
+            <h3 className="text-sm md:text-lg font-bold mb-1 md:mb-2 line-clamp-2">{item.title}</h3>
+            <p className="text-xs md:text-sm text-gray-400 line-clamp-2 md:line-clamp-3">{item.description}</p>
           </Card>
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 bg-gray-900/40 rounded-lg p-6">
-          <h3 className="text-2xl font-bold mb-4">About Me</h3>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="md:col-span-2 bg-gray-900/40 rounded-lg p-4 md:p-6">
+          <h3 className="text-lg md:text-2xl font-bold mb-4">About Me</h3>
           <p className="text-gray-300 leading-relaxed mb-4">
             I am a B.Tech Electronics and Communication Engineering student at SRM Institute of Science and Technology with a growing passion for the evolving world of semiconductor technology, VLSI design, and digital electronics. These areas have shaped my technical foundation and allowed me to appreciate the depth, precision, and innovation required in modern electronic systems.
           </p>
