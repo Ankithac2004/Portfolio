@@ -18,17 +18,17 @@ const skillCategories = [
 export default function Skills() {
   return (
     <section id="skills" className="mb-12">
-      <h2 className="text-3xl font-bold mb-6">Skills</h2>
+      <h2 className="text-2xl md:text-3xl font-bold mb-6">Skills</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         {skillCategories.map((category, index) => (
           <Card key={index}>
-            <h3 className="text-xl font-bold mb-4">{category.title}</h3>
+            <h3 className="text-lg md:text-xl font-bold mb-4">{category.title}</h3>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill, i) => (
                 <span
                   key={i}
-                  className="px-3 py-1.5 bg-gradient-to-r from-gray-800 to-gray-700 rounded-full text-sm font-medium hover:from-green-600 hover:to-green-500 transition-all cursor-default"
+                  className="px-2 md:px-3 py-1 md:py-1.5 bg-gradient-to-r from-gray-800 to-gray-700 rounded-full text-xs md:text-sm font-medium hover:from-green-600 hover:to-green-500 transition-all cursor-default"
                 >
                   {skill}
                 </span>
