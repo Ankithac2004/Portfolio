@@ -25,27 +25,27 @@ const eventCategories = [
 export default function Events() {
   return (
     <section id="events" className="mb-12">
-      <h2 className="text-3xl font-bold mb-6">Events & Volunteering</h2>
+      <h2 className="text-2xl md:text-3xl font-bold mb-6">Events & Volunteering</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         {eventCategories.map((category, index) => {
           const Icon = category.icon;
           return (
             <Card key={index}>
-              <div className={`w-full h-32 rounded-md bg-gradient-to-br ${category.color} mb-4 flex items-center justify-center`}>
-                <Icon size={48} />
+              <div className={`w-full h-20 md:h-32 rounded-md bg-gradient-to-br ${category.color} mb-3 md:mb-4 flex items-center justify-center`}>
+                <Icon size={32} className="md:w-12 md:h-12" />
               </div>
-              <h3 className="text-lg font-bold mb-2">{category.title}</h3>
-              <p className="text-sm text-gray-400">{category.description}</p>
+              <h3 className="text-base md:text-lg font-bold mb-2">{category.title}</h3>
+              <p className="text-xs md:text-sm text-gray-400">{category.description}</p>
             </Card>
           );
         })}
       </div>
 
       <Card>
-        <div className="text-center py-8">
-          <h3 className="text-xl font-bold mb-2">More Events Coming Soon</h3>
-          <p className="text-gray-400">
+        <div className="text-center py-6 md:py-8">
+          <h3 className="text-lg md:text-xl font-bold mb-2">More Events Coming Soon</h3>
+          <p className="text-xs md:text-base text-gray-400">
             Detailed list of hackathons, conferences, and volunteering experiences will be added here
           </p>
         </div>
