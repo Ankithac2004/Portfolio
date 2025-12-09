@@ -8,47 +8,62 @@ function App() {
   const [activeSection, setActiveSection] = useState('about');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  /**
+   * Map the public section keys (used by menu/highlights) to actual DOM ids.
+   * Use this to keep your navigation labels stable while allowing
+   * anchors inside the section (like about-main).
+   */
+  const sectionMap: Record<string, string> = {
+    about: 'about-main',    // menu/highlight 'about' -> actual DOM id 'about-main'
+    resume: 'resume',
+    education: 'education',
+    projects: 'projects',
+    skills: 'skills',
+    research: 'research',
+    experience: 'experience',
+    extra: 'extra',
+    events: 'events',
+    contact: 'contact',
+  };
+
   useEffect(() => {
     const scrollContainer = document.querySelector('[data-scroll-container]') as HTMLElement;
     if (!scrollContainer) return;
 
     const handleScroll = () => {
-      const sections = [
-        'about',
-        'resume',
-        'education',
-        'projects',
-        'skills',
-        'research',
-        'experience',
-        'extra',
-        'events',
-        'contact',
-      ];
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
+      // iterate through the public keys so activeSection remains menu-friendly
+      for (const publicKey of Object.keys(sectionMap)) {
+        const targetId = sectionMap[publicKey];
+        const element = document.getElementById(targetId);
         if (element) {
           const rect = element.getBoundingClientRect();
+          // 150px is your "watch" line; adjust if header size changes
           if (rect.top <= 150 && rect.bottom >= 150) {
-            setActiveSection(section);
+            setActiveSection(publicKey);
             break;
           }
         }
       }
     };
 
-    scrollContainer.addEventListener('scroll', handleScroll);
+    // initial run to set activeSection correctly on load
+    handleScroll();
+
+    scrollContainer.addEventListener('scroll', handleScroll, { passive: true });
     return () => scrollContainer.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, []); // sectionMap is static; if dynamic, add to deps
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
+    // map e.g. 'about' -> 'about-main' before scrolling
+    const targetId = sectionMap[sectionId] || sectionId;
+    const element = document.getElementById(targetId);
     const scrollContainer = document.querySelector('[data-scroll-container]') as HTMLElement;
 
     if (element && scrollContainer) {
-      const offset = 80;
-      const elementPosition = element.offsetTop;
+      const offset = 80; // adjust to match header height
+      // element.offsetTop is relative to the scroll container only if it's the container's child
+      // to be safe, compute relative position from pageY
+      const elementPosition = element.getBoundingClientRect().top + scrollContainer.scrollTop;
       const targetScroll = elementPosition - offset;
 
       scrollContainer.scrollTo({
