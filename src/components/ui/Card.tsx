@@ -14,7 +14,7 @@ export default function Card({ children, onClick }: CardProps) {
       className={`relative bg-gray-900/40 rounded-lg p-6 transition-all duration-300 cursor-pointer group ${
         isHovered ? 'bg-gray-800/60 transform -translate-y-1 shadow-2xl' : ''
       }`}
-      onMouseEnter={() => setIsHovered(true)}
+      onMouseEnter={() => setIsHovered(true)} 
       onMouseLeave={() => setIsHovered(false)}
       onClick={onClick}
     >
