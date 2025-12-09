@@ -20,15 +20,6 @@ export default function Header() {
             ECE Student | Developing Foundations in Semiconductors, VLSI, and Intelligent Systems
           </p>
         </div>
-        <div className="w-full md:w-auto flex flex-col gap-2 md:gap-3">
-          <button
-            onClick={handleDownloadResume}
-            className="px-4 md:px-6 py-2 md:py-3 bg-white text-black rounded-full font-semibold flex items-center justify-center gap-2 hover:scale-105 transition text-sm md:text-base"
-          >
-            <Download size={18} />
-            <span>Resume</span>
-          </button>
-        </div>
       </div>
     </div>
   );
