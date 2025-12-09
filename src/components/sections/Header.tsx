@@ -2,7 +2,12 @@ import { Download } from 'lucide-react';
 
 export default function Header() {
   const handleDownloadResume = () => {
-    alert('Resume download will be connected to actual PDF link!');
+    const link = document.createElement('a');
+    link.href = '/ankitha_c_doc.pdf';
+    link.download = 'Ankitha_C_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (

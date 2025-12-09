@@ -3,7 +3,12 @@ import Card from '../ui/Card';
 
 export default function Resume() {
   const handleDownload = () => {
-    alert('Resume download will be connected to actual PDF link!');
+    const link = document.createElement('a');
+    link.href = '/ankitha_c_doc.pdf';
+    link.download = 'Ankitha_C_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
