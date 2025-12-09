@@ -10,7 +10,7 @@ const highlights = [
     title: 'Artist Overview',
     description: 'An engineer who thrives where logic meets creativity and ideas turn into experiences.',
     color: 'from-blue-500 to-cyan-500',
-    sectionId: 'about',
+    sectionId: 'about-main',
   },
   {
     title: 'Featured Releases',
@@ -55,7 +55,7 @@ export default function About({ onNavigate }: AboutProps) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-        <div className="md:col-span-2 bg-gray-900/40 rounded-lg p-4 md:p-6">
+        <div id="about-main" className="md:col-span-2 bg-gray-900/40 rounded-lg p-4 md:p-6">
           <h3 className="text-lg md:text-2xl font-bold mb-4">About Me</h3>
           <p className="text-gray-300 leading-relaxed mb-4">
             I am a B.Tech Electronics and Communication Engineering student at SRM Institute of Science and Technology with a growing passion for the evolving world of semiconductor technology, VLSI design, and digital electronics. These areas have shaped my technical foundation and allowed me to appreciate the depth, precision, and innovation required in modern electronic systems.
