@@ -16,7 +16,11 @@ interface MainContentProps {
 
 export default function MainContent({ onNavigate }: MainContentProps) {
   return (
-    <div className="flex-1 overflow-y-auto bg-gradient-to-b from-gray-900 via-gray-950 to-black pb-32 md:pb-32 pt-16 md:pt-0" data-scroll-container>
+    // Added `min-h-0` so this flex child can shrink and its inner overflow works.
+    <div
+      className="flex-1 min-h-0 overflow-y-auto bg-gradient-to-b from-gray-900 via-gray-950 to-black pb-32 md:pb-32 pt-16 md:pt-0"
+      data-scroll-container
+    >
       <Header />
       <div className="px-4 md:px-8">
         <About onNavigate={onNavigate} />
