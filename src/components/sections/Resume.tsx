@@ -19,8 +19,7 @@ export default function Resume() {
         <Card>
           <h3 className="text-lg md:text-xl font-bold mb-4">Professional Snapshot</h3>
           <p className="text-sm md:text-base text-gray-300 mb-4">
-            Versatile engineering student with expertise in Data Science, Android Development, and UI/UX Design.
-            Proven track record of delivering high-impact projects and internships with measurable results.
+            Driven ECE engineering student with a solid foundation in semiconductors, VLSI, and digital electronics, supported by modern skills in Machine Learning, UI/UX, and app development. Recognized for producing clear, result-oriented work through projects and hands-on experiences.
           </p>
           <button
             onClick={handleDownload}
