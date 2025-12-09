@@ -1,39 +1,65 @@
-import Header from './sections/Header';
-import About from './sections/About';
-import Resume from './sections/Resume';
-import Education from './sections/Education';
-import Projects from './sections/Projects';
-import Skills from './sections/Skills';
-import Research from './sections/Research';
-import Experience from './sections/Experience';
-import Extra from './sections/Extra';
-import Events from './sections/Events';
-import Contact from './sections/Contact';
+const scrollToSection = (sectionId: string) => {
+  try {
+    const scrollContainer = document.querySelector('[data-scroll-container]') as HTMLElement;
+    if (!scrollContainer) {
+      console.warn('Scroll container not found');
+      return;
+    }
 
-interface MainContentProps {
-  onNavigate: (section: string) => void;
-}
+    // Map public section id -> actual DOM id (if you have a map)
+    const sectionMap: Record<string, string> = {
+      about: 'about-main', // keep in sync with your mapping
+      resume: 'resume',
+      education: 'education',
+      projects: 'projects',
+      skills: 'skills',
+      research: 'research',
+      experience: 'experience',
+      extra: 'extra',
+      events: 'events',
+      contact: 'contact',
+    };
+    const targetId = sectionMap[sectionId] || sectionId;
 
-export default function MainContent({ onNavigate }: MainContentProps) {
-  return (
-    // Added `min-h-0` so this flex child can shrink and its inner overflow works.
-    <div
-      className="flex-1 min-h-0 overflow-y-auto bg-gradient-to-b from-gray-900 via-gray-950 to-black pb-32 md:pb-32 pt-16 md:pt-0"
-      data-scroll-container
-    >
-      <Header />
-      <div className="px-4 md:px-8">
-        <About onNavigate={onNavigate} />
-        <Resume />
-        <Education />
-        <Projects />
-        <Skills />
-        <Research />
-        <Experience />
-        <Extra />
-        <Events />
-        <Contact />
-      </div>
-    </div>
-  );
-}
+    const element = document.getElementById(targetId);
+    if (!element) {
+      console.warn('Target element not found for id:', targetId);
+      return;
+    }
+
+    // Compute element top relative to the scrollContainer
+    let el: HTMLElement | null = element;
+    let elTop = 0;
+    while (el && el !== scrollContainer && el.offsetParent) {
+      elTop += el.offsetTop;
+      el = el.offsetParent as HTMLElement;
+      // stop if walked beyond the scrollContainer's DOM tree
+      if (!el) break;
+    }
+
+    // If loop ended because el === scrollContainer, elTop is correct.
+    // Fallback: if element is a deep child in different stacking context, compute using getBoundingClientRect
+    if (el !== scrollContainer) {
+      // Fallback approach; compute by comparing bounding rects
+      const containerRect = scrollContainer.getBoundingClientRect();
+      const elemRect = element.getBoundingClientRect();
+      elTop = (elemRect.top - containerRect.top) + scrollContainer.scrollTop;
+    }
+
+    const headerOffset = 80; // tweak this: set to 0 to test if it scrolls fully to top
+    const targetScroll = Math.max(0, elTop - headerOffset);
+
+    // Debug logs — remove after confirming behavior
+    console.log('scrollToSection ->', { sectionId, targetId, elTop, targetScroll });
+
+    scrollContainer.scrollTo({
+      top: targetScroll,
+      behavior: 'smooth',
+    });
+
+    setActiveSection(sectionId);
+    setMobileMenuOpen(false);
+  } catch (err) {
+    console.error('scrollToSection error', err);
+  }
+};
