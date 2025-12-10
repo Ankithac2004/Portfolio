@@ -3,15 +3,15 @@ import Card from '../ui/Card';
 const skillCategories = [
   {
     title: 'Programming Languages',
-    skills: ['Python', 'Java', 'C', 'HTML/CSS', 'JavaScript', 'SQL'],
+    skills: ['Python', 'Verilog', 'C/C++', 'HTML/CSS', 'Java', 'Kotlin'],
   },
   {
     title: 'Tools & Platforms',
-    skills: ['VS Code', 'Android Studio', 'Figma', 'Git', 'Firebase', 'Jupyter'],
+    skills: ['VS Code', 'Xilinx ISE', 'Optisystem', 'Cadence', 'LTspice', 'Figma', 'Android Studio'],
   },
   {
     title: 'Libraries & Frameworks',
-    skills: ['TensorFlow', 'Scikit-learn', 'NumPy', 'Pandas', 'Matplotlib', 'PyTorch', 'SciPy', 'React'],
+    skills: ['TensorFlow', 'Scikit-learn', 'NumPy', 'Pandas', 'Matplotlib', 'PyTorch', 'SciPy'],
   },
 ];
 
