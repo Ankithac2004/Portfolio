@@ -3,7 +3,7 @@ import Card from '../ui/Card';
 const projects = [
   {
     title: 'Voice Command Recognition System',
-    tag: 'Speech Recognition · MFCC · Audio Processing',
+    tag: 'Speech Recognition • MFCC • Audio Processing',
     tools: ['Python', 'Librosa', 'Scikit-learn', 'NumPy / Pandas'],
     color: 'from-pink-500 to-rose-500',
     bullets: [
@@ -13,8 +13,8 @@ const projects = [
   }, 
   {
     title: 'Smart Blind Glasses with YOLOv3',
-    tag: 'Image Detection • Obeject Detection • Embedded AI',
-    tools: ['Python', 'Pandas', 'NumPy', 'Scikit-learn'],
+    tag: 'Image Detection • Obeject Detection • Embedded AI • Machine Learning',
+    tools: ['YOLOv3', 'ESP32-CAM', 'Arduino', 'Python', 'OpenCV'],
     color: 'from-green-500 to-emerald-500',
     bullets: [
       'Analyzed 50,000+ traffic records',
