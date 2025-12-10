@@ -10,7 +10,19 @@ const projects = [
       'Developed a speech recognition system that records audio, extracts MFCC features, and classifies voice commands.',
       'Improved accuracy using silence removal, normalization, and supervised ML models (SVM, Random Forest).',
     ],
-  },  
+  }, 
+  {
+    title: 'Smart Blind Glasses with YOLOv3',
+    tag: 'Image Detection • Obeject Detection • Embedded AI',
+    tools: ['Python', 'Pandas', 'NumPy', 'Scikit-learn'],
+    color: 'from-green-500 to-emerald-500',
+    bullets: [
+      'Analyzed 50,000+ traffic records',
+      'Studied patterns across 10+ junctions',
+      'Achieved 85% prediction accuracy',
+      'Built real-time prediction model',
+    ],
+  },
   {
     title: 'Traffic Flow Prediction',
     tag: 'Machine Learning',
