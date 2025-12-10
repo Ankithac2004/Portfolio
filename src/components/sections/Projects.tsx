@@ -38,10 +38,8 @@ const projects = [
     tools: ['HTML', 'CSS', 'JavaScript'],
     color: 'from-blue-500 to-cyan-500',
     bullets: [
-      'Responsive UI for all device sizes',
-      'User authentication and profiles',
-      'Create and join travel groups',
-      'Improved travel coordination by 40%',
+      'Developed a responsive web platform enabling 100+ users to host and join travel groups and manage event.',
+      'Improved user engagement and reduced manual coordination efforts by 30 percent through intuitive UI and automated backend workflows.',
     ],
   },
 ];
