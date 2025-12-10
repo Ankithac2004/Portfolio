@@ -27,10 +27,9 @@ const projects = [
     tools: ['Python', 'Pandas', 'NumPy', 'Scikit-learn'],
     color: 'from-green-500 to-emerald-500',
     bullets: [
-      'Analyzed 50,000+ traffic records',
-      'Studied patterns across 10+ junctions',
-      'Achieved 85% prediction accuracy',
-      'Built real-time prediction model',
+      'Built and deployed an ML model to predict traffic flow across 10+ junctions with ~85% accuracy.',
+      'Processed 50k+ historical traffic records for feature extraction and model training.',
+      'Evaluated multiple regression models and selected the best-performing approach for volume prediction.',
     ],
   },
   {
