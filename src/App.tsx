@@ -102,14 +102,17 @@ function App() {
       )}
 
       {/* Mobile sidebar */}
-      {mobileMenuOpen && (
-        <div className="fixed left-0 top-16 bottom-0 w-64 bg-black border-r border-gray-900 md:hidden z-35 overflow-y-auto">
-          <Sidebar
-            activeSection={activeSection}
-            onNavigate={scrollToSection}
-          />
-        </div>
-      )}
+      {/* Mobile sidebar (fixed, full height, solid dark background) */}
+{mobileMenuOpen && (
+  <div
+    className="fixed left-0 top-0 bottom-0 w-72 bg-black/95 border-r border-gray-900 md:hidden z-50 overflow-y-auto"
+    // Prevent clicks from falling through
+    onClick={(e) => e.stopPropagation()}
+  >
+    <Sidebar activeSection={activeSection} onNavigate={scrollToSection} />
+  </div>
+)}
+
 
       {/* Main content */}
       <MainContent onNavigate={scrollToSection} />
