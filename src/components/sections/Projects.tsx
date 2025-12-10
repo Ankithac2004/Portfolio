@@ -10,7 +10,7 @@ const projects = [
       'Developed a speech recognition system that records audio, extracts MFCC features, and classifies voice commands.',
       'Improved accuracy using silence removal, normalization, and supervised ML models (SVM, Random Forest).',
     ],
-  },  ·
+  },  
   {
     title: 'Traffic Flow Prediction',
     tag: 'Machine Learning',
