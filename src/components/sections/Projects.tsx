@@ -17,10 +17,8 @@ const projects = [
     tools: ['YOLOv3', 'ESP32-CAM', 'Arduino', 'Python', 'OpenCV'],
     color: 'from-green-500 to-emerald-500',
     bullets: [
-      'Analyzed 50,000+ traffic records',
-      'Studied patterns across 10+ junctions',
-      'Achieved 85% prediction accuracy',
-      'Built real-time prediction model',
+      'Built a smart blind-assist device using ESP32 + YOLOv3 for real-time image detection and obstacle alerts.',
+      'Integrated Python-based AI inference with embedded hardware to improve detection accuracy and response time.',
     ],
   },
   {
