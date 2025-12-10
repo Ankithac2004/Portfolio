@@ -115,7 +115,7 @@ function App() {
       <MainContent onNavigate={scrollToSection} />
 
       {/* Bottom bar */}
-      <BottomBar />
+      <BottomBar activeSection={activeSection} />
     </div>
   );
 }

@@ -1,4 +1,15 @@
-import { Home, FileText, GraduationCap, Folder, Code, BookOpen, Briefcase, Heart, Calendar, Mail } from 'lucide-react';
+import {
+  Home,
+  FileText,
+  GraduationCap,
+  Folder,
+  Code,
+  BookOpen,
+  Briefcase,
+  Heart,
+  Calendar,
+  Mail,
+} from 'lucide-react';
 
 interface SidebarProps {
   activeSection: string;
@@ -20,7 +31,7 @@ const navItems = [
 
 export default function Sidebar({ activeSection, onNavigate }: SidebarProps) {
   return (
-    <div className="w-64 bg-black flex flex-col h-full border-r border-gray-900">
+    <div className="w-64 bg-black flex flex-col h-full min-h-0 overflow-y-auto border-r border-gray-900">
       <div className="p-6">
         <div className="flex items-center gap-3 mb-8">
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
@@ -29,10 +40,11 @@ export default function Sidebar({ activeSection, onNavigate }: SidebarProps) {
           <span className="text-xl font-bold">Ankitha.fm</span>
         </div>
 
-        <nav className="space-y-1">
+        <nav className="space-y-1 pb-8">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeSection === item.id;
+
             return (
               <button
                 key={item.id}
