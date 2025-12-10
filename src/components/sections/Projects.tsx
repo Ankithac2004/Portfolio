@@ -2,17 +2,15 @@ import Card from '../ui/Card';
 
 const projects = [
   {
-    title: 'Kangaroo Care',
-    tag: 'Android · UX Case Study',
-    tools: ['Figma', 'Java', 'Android Studio'],
+    title: 'Voice Command Recognition System',
+    tag: 'Speech Recognition · MFCC · Audio Processing',
+    tools: ['Python', 'Librosa', 'Scikit-learn', 'NumPy / Pandas'],
     color: 'from-pink-500 to-rose-500',
     bullets: [
-      'Conducted UX research with 10+ interviews',
-      'Designed 30+ high-fidelity screens in Figma',
-      'Implemented Android app with modern UI patterns',
-      'Focus on maternal and infant care tracking',
+      'Developed a speech recognition system that records audio, extracts MFCC features, and classifies voice commands.',
+      'Improved accuracy using silence removal, normalization, and supervised ML models (SVM, Random Forest).',
     ],
-  },
+  },  ·
   {
     title: 'Traffic Flow Prediction',
     tag: 'Machine Learning',
