@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Card from "../ui/Card";
-import ProjectDrawer, { ProjectItem } from "./ProjectDrawer";
+import ProjectDrawer from "../../ProjectDrawer";
+
 
 const projects: ProjectItem[] = [
   {
