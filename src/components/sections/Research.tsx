@@ -20,7 +20,7 @@ export default function Research() {
             </div>
 
             <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-3">
-              • Built an ML model for 10 Gbps OOK-FSO BER prediction, achieving R² 0.906.
+              • Built an ML model for 10 Gbps OOK-FSO BER prediction, achieving R² 0.906.<br />
               • Designed and simulated the complete FSO link in OptiSystem and contributed key analysis and revisions to the published research manuscript.
             </p>
 
