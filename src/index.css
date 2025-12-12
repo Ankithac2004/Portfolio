@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Make sure BottomBar has a class "bottom-bar" (see step 3) */
+
+/* Hide/move bottom bar when modal is open */
+body.modal-open .bottom-bar {
+  transform: translateY(110%);
+  transition: transform 200ms ease;
+}
+
+/* Ensure bottom bar default has smooth transform */
+.bottom-bar {
+  transition: transform 200ms ease;
+}
+
+/* Slightly dim page behind modal (optional) */
+body.modal-open .page-dim {
+  filter: blur(1px) saturate(.9);
+}
+
+/* Modal panel corner and scrollbar polish (optional) */
+.project-modal-scroll {
+  scrollbar-width: thin;
+}
