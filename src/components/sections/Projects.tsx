@@ -1,6 +1,8 @@
-import Card from '../ui/Card';
+import React, { useState } from "react";
+import Card from "../ui/Card";
+import ProjectDrawer, { ProjectItem } from "./ProjectDrawer";
 
-const projects = [
+const projects: ProjectItem[] = [
   {
     title: 'Voice Command Recognition System',
     tag: 'Speech Recognition • MFCC • Audio Processing',
@@ -10,10 +12,10 @@ const projects = [
       'Developed a speech recognition system that records audio, extracts MFCC features, and classifies voice commands.',
       'Improved accuracy using silence removal, normalization, and supervised ML models (SVM, Random Forest).',
     ],
-  }, 
+  },
   {
     title: 'Smart Blind Glasses with YOLOv3',
-    tag: 'Image Detection • Obeject Detection • Embedded AI • Machine Learning',
+    tag: 'Image Detection • Object Detection • Embedded AI • Machine Learning',
     tools: ['YOLOv3', 'ESP32-CAM', 'Arduino', 'Python', 'OpenCV'],
     color: 'from-green-500 to-emerald-500',
     bullets: [
@@ -38,49 +40,61 @@ const projects = [
     tools: ['HTML', 'CSS', 'JavaScript'],
     color: 'from-blue-500 to-cyan-500',
     bullets: [
-      'Developed a responsive web platform enabling 100+ users to host and join travel groups and manage event.',
-      'Improved user engagement and reduced manual coordination efforts by 30 percent through intuitive UI and automated backend workflows.',
+      'Developed a responsive web platform enabling 100+ users to host and join travel groups and manage events.',
+      'Improved user engagement and reduced manual coordination efforts by 30% through intuitive UI and automation.',
     ],
   },
 ];
 
 export default function Projects() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const selected = openIndex !== null ? projects[openIndex] : null;
+
   return (
     <section id="projects" className="mb-12">
       <h2 className="text-2xl md:text-3xl font-bold mb-6">Projects</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-        {projects.map((project, index) => (
-          <Card key={index}>
-            <div className={`w-full h-24 md:h-40 rounded-md bg-gradient-to-br ${project.color} mb-3 md:mb-4 flex items-center justify-center`}>
-              <span className="text-2xl md:text-3xl font-bold opacity-50">{project.title.charAt(0)}</span>
-            </div>
+        {projects.map((project, idx) => (
+          <div key={idx} onClick={() => setOpenIndex(idx)} className="cursor-pointer">
+            <Card>
+              <div className={`w-full h-24 md:h-40 rounded-md bg-gradient-to-br ${project.color} mb-3 md:mb-4 flex items-center justify-center`}>
+                <span className="text-2xl md:text-3xl font-bold opacity-50">{project.title.charAt(0)}</span>
+              </div>
 
-            <div className="mb-2">
-              <span className="text-xs text-green-500 font-semibold">{project.tag}</span>
-            </div>
+              <div className="mb-2">
+                <span className="text-xs text-green-500 font-semibold">{project.tag}</span>
+              </div>
 
-            <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">{project.title}</h3>
+              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">{project.title}</h3>
 
-            <ul className="space-y-1 md:space-y-2 mb-4">
-              {project.bullets.map((bullet, i) => (
-                <li key={i} className="text-xs md:text-sm text-gray-400 flex items-start gap-2">
-                  <span className="text-green-500 mt-0.5 md:mt-1 flex-shrink-0">•</span>
-                  <span>{bullet}</span>
-                </li>
-              ))}
-            </ul>
+              <ul className="space-y-1 md:space-y-2 mb-4">
+                {project.bullets.map((bullet, i) => (
+                  <li key={i} className="text-xs md:text-sm text-gray-400 flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5 md:mt-1 flex-shrink-0">•</span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
 
-            <div className="flex flex-wrap gap-2">
-              {project.tools.map((tool, i) => (
-                <span key={i} className="px-2 py-1 bg-gray-800 rounded text-xs">
-                  {tool}
-                </span>
-              ))}
-            </div>
-          </Card>
+              <div className="flex flex-wrap gap-2">
+                {project.tools.map((tool, i) => (
+                  <span key={i} className="px-2 py-1 bg-gray-800 rounded text-xs">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </Card>
+          </div>
         ))}
       </div>
+
+      {/* Drawer */}
+      <ProjectDrawer
+        project={selected}
+        onClose={() => setOpenIndex(null)}
+      />
     </section>
   );
 }
