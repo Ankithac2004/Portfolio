@@ -1,14 +1,7 @@
-// ProjectDrawer.tsx
+// src/components/ProjectDrawer.tsx
 import React, { useEffect } from "react";
 import { X } from "lucide-react";
-
-export type ProjectItem = {
-  title: string;
-  tag: string;
-  tools: string[];
-  color: string;
-  bullets: string[];
-};
+import type { ProjectItem } from "./sections/Projects"; // adjust if your type lives elsewhere
 
 interface ProjectDrawerProps {
   project: ProjectItem | null;
@@ -17,15 +10,19 @@ interface ProjectDrawerProps {
 
 export default function ProjectDrawer({ project, onClose }: ProjectDrawerProps) {
   useEffect(() => {
-    if (!project) return;
-    const original = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    // disable body scroll and add class to hide bottom bar
+    const origOverflow = document.body.style.overflow;
+    document.body.style.overflow = project ? "hidden" : origOverflow;
+    if (project) document.body.classList.add("modal-open");
+    else document.body.classList.remove("modal-open");
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
     window.addEventListener("keydown", onKey);
     return () => {
-      document.body.style.overflow = original;
+      document.body.style.overflow = origOverflow;
+      document.body.classList.remove("modal-open");
       window.removeEventListener("keydown", onKey);
     };
   }, [project, onClose]);
@@ -33,7 +30,11 @@ export default function ProjectDrawer({ project, onClose }: ProjectDrawerProps) 
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex">
+    <div
+      className="fixed inset-0 z-[80] flex items-center justify-center px-4 md:px-8"
+      aria-modal="true"
+      role="dialog"
+    >
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
@@ -41,57 +42,62 @@ export default function ProjectDrawer({ project, onClose }: ProjectDrawerProps) 
         aria-hidden
       />
 
-      {/* Drawer panel */}
-      <aside
-        className="relative ml-auto w-full md:w-[640px] max-w-full h-full bg-gradient-to-b from-gray-900/95 to-black/95 border-l border-white/6 shadow-2xl transform transition-transform duration-300"
-        role="dialog"
-        aria-modal="true"
+      {/* Modal panel - centered, smaller, soft corners */}
+      <div
+        className="relative w-full max-w-2xl md:max-w-3xl bg-gradient-to-b from-gray-900/95 to-black/95 border border-white/6 rounded-2xl shadow-2xl overflow-hidden transform transition-all"
+        role="document"
       >
         {/* Header */}
-        <div className="flex items-start justify-between p-4 md:p-6 border-b border-white/6">
-          <div>
-            <h3 className="text-lg md:text-2xl font-bold">{project.title}</h3>
-            <div className="text-xs text-gray-400 mt-1">{project.tag}</div>
+        <div className="flex items-start justify-between gap-4 p-4 md:p-6 border-b border-white/6">
+          <div className="min-w-0">
+            <h3 className="text-lg md:text-2xl font-bold text-white truncate">{project.title}</h3>
+            <div className="text-xs md:text-sm text-gray-400 mt-1 truncate">{project.tag}</div>
           </div>
 
           <button
             onClick={onClose}
-            aria-label="Close"
-            className="text-gray-300 hover:text-white p-2 rounded"
+            aria-label="Close project"
+            className="ml-4 text-gray-300 hover:text-white p-2 rounded-md"
           >
             <X size={18} />
           </button>
         </div>
 
         {/* Content */}
-        <div className="p-4 md:p-6 overflow-y-auto h-[calc(100%-72px)]">
-          <div className={`w-full h-44 md:h-56 rounded-md mb-4 bg-gradient-to-br ${project.color} flex items-center justify-center`}>
-            <span className="text-3xl font-bold opacity-40">{project.title.charAt(0)}</span>
+        <div className="p-4 md:p-6 grid grid-cols-1 md:grid-cols-3 gap-6 max-h-[70vh] md:max-h-[72vh] overflow-y-auto">
+          {/* visual / cover */}
+          <div className="md:col-span-1 flex items-center justify-center">
+            <div className={`w-full h-40 md:h-56 rounded-lg bg-gradient-to-br ${project.color} flex items-center justify-center`}>
+              <span className="text-4xl font-bold opacity-30">{project.title.charAt(0)}</span>
+            </div>
           </div>
 
-          <div className="mb-4 text-sm md:text-base text-gray-300">
-            <ul className="list-disc pl-5 space-y-2">
+          {/* details */}
+          <div className="md:col-span-2">
+            <ul className="list-disc list-inside space-y-2 text-sm md:text-base text-gray-300 mb-4">
               {project.bullets.map((b, i) => (
                 <li key={i}>{b}</li>
               ))}
             </ul>
-          </div>
 
-          <div className="mb-4">
-            <div className="text-xs text-gray-400 font-semibold mb-2">Tools</div>
-            <div className="flex flex-wrap gap-2">
-              {project.tools.map((t) => (
-                <span key={t} className="px-2 py-1 bg-white/6 rounded text-xs">{t}</span>
-              ))}
+            <div className="mb-4">
+              <div className="text-xs text-gray-400 font-semibold mb-2">Tools</div>
+              <div className="flex flex-wrap gap-2">
+                {project.tools.map((t) => (
+                  <span key={t} className="px-2 py-1 bg-white/6 rounded text-xs">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="text-xs text-gray-400 font-semibold mb-2">Tags</div>
+              <div className="text-sm text-gray-300">{project.tag}</div>
             </div>
           </div>
-
-          <div>
-            <div className="text-xs text-gray-400 font-semibold mb-2">Tags</div>
-            <div className="text-sm text-gray-300">{project.tag}</div>
-          </div>
         </div>
-      </aside>
+      </div>
     </div>
   );
 }
