@@ -16,7 +16,7 @@ export default function Research() {
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
                 <BookOpen size={22} />
               </div>
-              <h3 className="text-lg md:text-xl font-semibold">Traffic Flow Prediction Research</h3>
+              <h3 className="text-lg md:text-xl font-semibold">ML Driven Predictive Modeling of OOK-FSO Systems</h3>
             </div>
 
             <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-3">
