@@ -20,9 +20,8 @@ export default function Research() {
             </div>
 
             <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-3">
-              Built an ML model for 10 Gbps OOK-FSO BER prediction, achieving R² 0.906.
-              Designed and simulated the complete FSO link in OptiSystem and contributed key analysis and revisions to the
-published research manuscript
+              • Built an ML model for 10 Gbps OOK-FSO BER prediction, achieving R² 0.906.
+              • Designed and simulated the complete FSO link in OptiSystem and contributed key analysis and revisions to the published research manuscript.
             </p>
 
             <div className="text-xs md:text-sm text-gray-400 space-y-1">
@@ -40,18 +39,18 @@ published research manuscript
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
                 <BookOpen size={22} />
               </div>
-              <h3 className="text-lg md:text-xl font-semibold">Embedded Vision for Assistive Devices</h3>
+              <h3 className="text-lg md:text-xl font-semibold">AES-128 and AES-256 FPGA Implementation</h3>
             </div>
 
             <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-3">
-              Exploratory work on integrating embedded hardware with deep learning vision algorithms to support
-              assistive navigation systems, focusing on real-time detection accuracy and system performance.
+              • Implemented AES-128 and AES-256 in Verilog on FPGA and analysed resource, delay, and power metrics.
+              • Contributed to research paper through simulation validation and comparative performance evaluation.
             </p>
 
             <div className="text-xs md:text-sm text-gray-400 space-y-1">
-              <p><span className="text-white font-semibold">Domain:</span> Embedded AI, Computer Vision</p>
-              <p><span className="text-white font-semibold">Tools:</span> YOLOv3, ESP32-CAM, Python, OpenCV</p>
-              <p><span className="text-white font-semibold">Status:</span> Early Stage Concept</p>
+              <p><span className="text-white font-semibold">Domain:</span> Cryptographic Hardware Design, FPGA Implementation, Digital VLSI Systems</p>
+              <p><span className="text-white font-semibold">Tools:</span> Verilog HDL, Xilinx ISE / FPGA Boards, Simulation & Power Analysis Tools</p>
+              <p><span className="text-white font-semibold">Status:</span> Completed • Research Manuscript Contribution</p>
             </div>
           </div>
         </Card>
