@@ -43,7 +43,7 @@ export default function Research() {
             </div>
 
             <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-3">
-              • Implemented AES-128 and AES-256 in Verilog on FPGA and analysed resource, delay, and power metrics.
+              • Implemented AES-128 and AES-256 in Verilog on FPGA and analysed resource, delay, and power metrics.<br />
               • Contributed to research paper through simulation validation and comparative performance evaluation.
             </p>
 
