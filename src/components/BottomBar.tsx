@@ -81,3 +81,5 @@ export default function BottomBar({ activeSection = "default" }: BottomBarProps)
     </footer>
   );
 }
+- <footer className="fixed bottom-0 left-0 right-0 md:left-64 h-20 md:h-24 bg-card/80 backdrop-blur-lg border-t border-border z-30">
++ <footer className="bottom-bar fixed bottom-0 left-0 right-0 md:left-64 h-20 md:h-24 bg-card/80 backdrop-blur-lg border-t border-border z-30">
