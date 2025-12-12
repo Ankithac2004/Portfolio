@@ -25,7 +25,7 @@ export default function Research() {
             </p>
 
             <div className="text-xs md:text-sm text-gray-400 space-y-1">
-              <p><span className="text-white font-semibold">Domain:</span> Machine Learning, Smart Mobility</p>
+              <p><span className="text-white font-semibold">Domain:</span> Optical Wireless Communication, OOK–FSO Modeling, Machine Learning for Physical Layer Systems</p>
               <p><span className="text-white font-semibold">Tools:</span> Python, NumPy, Pandas, Regression Models</p>
               <p><span className="text-white font-semibold">Status:</span> Working Draft</p>
             </div>
