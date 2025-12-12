@@ -20,14 +20,15 @@ export default function Research() {
             </div>
 
             <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-3">
-              Developed ML models to analyze and predict traffic flow using historical data, achieving strong accuracy
-              across multiple city junctions with optimized preprocessing and regression techniques.
+              Built an ML model for 10 Gbps OOK-FSO BER prediction, achieving R² 0.906.
+              Designed and simulated the complete FSO link in OptiSystem and contributed key analysis and revisions to the
+published research manuscript
             </p>
 
             <div className="text-xs md:text-sm text-gray-400 space-y-1">
               <p><span className="text-white font-semibold">Domain:</span> Optical Wireless Communication, OOK–FSO Modeling, Machine Learning for Physical Layer Systems</p>
-              <p><span className="text-white font-semibold">Tools:</span> Python, NumPy, Pandas, Regression Models</p>
-              <p><span className="text-white font-semibold">Status:</span> Working Draft</p>
+              <p><span className="text-white font-semibold">Tools:</span> Python, Scikit-learn, OptiSystem, NumPy / Pandas</p>
+              <p><span className="text-white font-semibold">Status:</span> Active Research • Manuscript Accepted</p>
             </div>
           </div>
         </Card>
