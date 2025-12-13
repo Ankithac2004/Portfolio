@@ -43,7 +43,7 @@ export default function ProjectDrawer({ project, onClose }: ProjectDrawerProps) 
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-[80] flex items-center justify-center px-4 md:px-8">
+    <div className="fixed inset-0 z-[80] flex items-center justify-center px-4 md:px-8 animate-fadeIn">
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
