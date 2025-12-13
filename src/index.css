@@ -23,3 +23,31 @@ body.modal-open .page-dim {
 .project-modal-scroll {
   scrollbar-width: thin;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 180ms ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
