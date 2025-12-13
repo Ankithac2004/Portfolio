@@ -44,7 +44,7 @@ export default function ProjectDrawer({ project, onClose }: ProjectDrawerProps) 
 
       {/* Modal panel - centered, smaller, soft corners */}
       <div
-        className="relative w-full max-w-2xl md:max-w-3xl bg-gradient-to-b from-gray-900/95 to-black/95 border border-white/6 rounded-2xl shadow-2xl overflow-hidden transform transition-all"
+        className="relative w-full max-w-2xl md:max-w-3xl bg-gradient-to-b from-gray-900/95 to-black/95 rounded-2xl shadow-2xl overflow-hidden transform transition-all"
         role="document"
       >
         {/* Header */}
