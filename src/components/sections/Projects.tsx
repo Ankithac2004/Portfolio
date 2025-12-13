@@ -8,6 +8,7 @@ const projects = [
     tag: "Speech Recognition • MFCC • Audio Processing",
     tools: ["Python", "Librosa", "Scikit-learn", "NumPy / Pandas"],
     color: "from-pink-500 to-rose-500",
+    github: "https://github.com/yourusername/voice-command-recognition",
     bullets: [
       "Developed a speech recognition system that records audio, extracts MFCC features, and classifies voice commands.",
       "Improved accuracy using silence removal, normalization, and supervised ML models (SVM, Random Forest).",
@@ -18,6 +19,7 @@ const projects = [
     tag: "Image Detection • Object Detection • Embedded AI • Machine Learning",
     tools: ["YOLOv3", "ESP32-CAM", "Arduino", "Python", "OpenCV"],
     color: "from-green-500 to-emerald-500",
+    github: "https://github.com/yourusername/voice-command-recognition",
     bullets: [
       "Built a smart blind-assist device using ESP32 + YOLOv3 for real-time image detection and obstacle alerts.",
       "Integrated Python-based AI inference with embedded hardware to improve detection accuracy and response time.",
@@ -28,6 +30,7 @@ const projects = [
     tag: "Machine Learning",
     tools: ["Python", "Pandas", "NumPy", "Scikit-learn"],
     color: "from-green-500 to-emerald-500",
+    github: "https://github.com/yourusername/voice-command-recognition",
     bullets: [
       "Built and deployed an ML model to predict traffic flow across 10+ junctions with ~85% accuracy.",
       "Processed 50k+ historical traffic records for feature extraction and model training.",
@@ -39,6 +42,7 @@ const projects = [
     tag: "Web Development",
     tools: ["HTML", "CSS", "JavaScript"],
     color: "from-blue-500 to-cyan-500",
+    github: "https://github.com/yourusername/voice-command-recognition",
     bullets: [
       "Developed a responsive web platform enabling 100+ users to host and join travel groups and manage events.",
       "Improved user engagement and reduced manual coordination efforts by 30% through intuitive UI and automation.",
