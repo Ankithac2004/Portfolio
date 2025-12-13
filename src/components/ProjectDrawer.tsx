@@ -2,6 +2,8 @@
 import React, { useEffect } from "react";
 import { X } from "lucide-react";
 import type { ProjectItem } from "./sections/Projects"; // adjust if your type lives elsewhere
+import { X, Github } from "lucide-react";
+
 
 interface ProjectDrawerProps {
   project: ProjectItem | null;
@@ -48,7 +50,28 @@ export default function ProjectDrawer({ project, onClose }: ProjectDrawerProps) 
         role="document"
       >
         {/* Header */}
-        <div className="flex items-start justify-between gap-4 p-4 md:p-6">
+        <div className="flex items-center gap-3">
+  {project.github && (
+    <a
+      href={project.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-gray-400 hover:text-white transition"
+      aria-label="View on GitHub"
+    >
+      <Github size={18} />
+    </a>
+  )}
+
+  <button
+    onClick={onClose}
+    aria-label="Close project"
+    className="text-gray-400 hover:text-white transition"
+  >
+    <X size={18} />
+  </button>
+</div>
+
           <div className="min-w-0">
             <h3 className="text-lg md:text-2xl font-bold text-white truncate">{project.title}</h3>
             <div className="text-xs md:text-sm text-gray-400 mt-1 truncate">{project.tag}</div>
