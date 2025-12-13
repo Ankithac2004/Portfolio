@@ -48,7 +48,7 @@ export default function ProjectDrawer({ project, onClose }: ProjectDrawerProps) 
         role="document"
       >
         {/* Header */}
-        <div className="flex items-start justify-between gap-4 p-4 md:p-6 border-b border-white/6">
+        <div className="flex items-start justify-between gap-4 p-4 md:p-6">
           <div className="min-w-0">
             <h3 className="text-lg md:text-2xl font-bold text-white truncate">{project.title}</h3>
             <div className="text-xs md:text-sm text-gray-400 mt-1 truncate">{project.tag}</div>
