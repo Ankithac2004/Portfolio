@@ -51,7 +51,14 @@ export default function ProjectDrawer({ project, onClose }: ProjectDrawerProps) 
       />
 
       {/* Modal */}
-      <div className="relative w-full max-w-2xl md:max-w-3xl bg-gradient-to-b from-gray-900/95 to-black/95 rounded-2xl shadow-xl overflow-hidden">
+      <div
+  className="
+    relative w-full max-w-2xl md:max-w-3xl
+    bg-gradient-to-b from-gray-900/95 to-black/95
+    rounded-2xl shadow-xl overflow-hidden
+    animate-scaleIn
+  "
+>
         
         {/* Header */}
         <div className="flex items-center justify-between p-4 md:p-6">
