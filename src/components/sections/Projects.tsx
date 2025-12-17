@@ -19,7 +19,7 @@ const projects = [
     tag: "Image Detection • Object Detection • Embedded AI • Machine Learning",
     tools: ["YOLOv3", "ESP32-CAM", "Arduino", "Python", "OpenCV"],
     color: "from-green-500 to-emerald-500",
-    github: "https://github.com/yourusername/voice-command-recognition",
+    github: "https://github.com/Ankithac2004/Smart-Blind-Stick-with-Objection-and-Image-detection-using-YOLO-v3",
     bullets: [
       "Built a smart blind-assist device using ESP32 + YOLOv3 for real-time image detection and obstacle alerts.",
       "Integrated Python-based AI inference with embedded hardware to improve detection accuracy and response time.",
